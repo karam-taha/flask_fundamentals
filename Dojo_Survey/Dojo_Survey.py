@@ -4,8 +4,6 @@ app.secret_key = 'keep it secret, keep it safe'
 
 @app.route('/')
 def index():
-    # if request.method == 'POST':
-    #     print(request.form.get('people'))
     return render_template("index.html")
 
 @app.route('/users', methods=['GET','POST','PUT'])
