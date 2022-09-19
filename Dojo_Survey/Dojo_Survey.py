@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request, redirect,session # don't forget to import redirect!
+from flask import Flask, render_template, request, redirect,session
 app = Flask(__name__)
-app.secret_key = 'keep it secret, keep it safe' # set a secret key for security purposes
+app.secret_key = 'keep it secret, keep it safe'
 
 @app.route('/')
 def index():
@@ -17,7 +17,6 @@ def create_user():
     session['check']=request.form['check']
     return redirect("/result")
     
-# adding this method
 @app.route("/result")
 def show_user():
     return render_template("result.html",name=session['name'],location=session['location'],
